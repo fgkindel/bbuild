@@ -373,3 +373,165 @@ p {
         font-size: 0.9rem;
     }
 }
+
+/* About Page Specific Styles */
+
+.page-title-section {
+    text-align: center;
+    padding: 3em 0;
+    background-color: rgba(10, 10, 15, 0.5); /* Subtle dark background */
+    border-bottom: 1px solid #00E0FF; /* Neon cyan border */
+    margin-bottom: 2em;
+}
+
+.page-title { /* This is an h1 */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    color: #FF4DF2; /* Neon Pink/Purple */
+    text-shadow: 0 0 4px #FF4DF2;
+    text-transform: uppercase;
+}
+
+.about-page-content .content-section {
+    padding: 2em 0;
+}
+
+.about-page-content .section-subtitle { /* These are h2 */
+    font-family: 'Space Grotesk', sans-serif; /* Different font for subtitles on this page */
+    font-size: 1.8rem;
+    color: #00E0FF; /* Neon Cyan */
+    margin-bottom: 1em;
+    text-align: left; /* Align subtitles to the left */
+    padding-bottom: 0.3em;
+    border-bottom: 1px dashed rgba(0, 224, 255, 0.3); /* Subtle dashed line */
+}
+
+.about-page-content .content-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #D0D0D0; /* Slightly brighter than default p for readability */
+}
+
+.section-divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 224, 255, 0), rgba(0, 224, 255, 0.75), rgba(0, 224, 255, 0));
+    box-shadow: 0 0 5px rgba(0, 224, 255, 0.5);
+    margin: 3em auto; /* Add more vertical spacing */
+    width: 70%; /* Make divider not full width */
+}
+
+/* Ensure about.html specific nav link gets an active state if possible,
+   though this might be better handled with JS in a full setup.
+   For static, we can style it directly if it's the current page.
+   Assuming the 'About' link in `about.html`'s nav is just <a href="about.html">About</a>
+*/
+.main-navigation ul li a[href="about.html"] {
+    color: #FF0080; /* Hot Pink to indicate current page */
+    text-shadow: 0 0 3px #FF0080;
+}
+
+.main-navigation ul li a[href="about.html"]::after {
+    width: 100%; /* Show underline for current page */
+    background-color: #FF0080;
+}
+
+/* Lore Archive Page Specific Styles */
+
+.lore-header-section { /* Styles for the header section of the lore page */
+    text-align: center;
+    padding: 2.5em 0 2em; /* Slightly less padding than about page title */
+    /* background-color: rgba(10, 10, 15, 0.4); */ /* Optional: subtle background if needed */
+    /* border-bottom: 1px solid rgba(0, 224, 255, 0.15); */ /* Optional: subtle border */
+    margin-bottom: 2.5em;
+}
+
+.lore-header-section .page-title { /* h1 - "The Hall of Sigils" */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem; /* Prominent title */
+    color: #FF4DF2; /* Neon Pink/Purple */
+    text-shadow: 0 0 5px #FF4DF2, 0 0 10px #FF4DF2;
+    text-transform: uppercase;
+    margin-bottom: 0.25em;
+}
+
+.lore-header-section .page-subtitle { /* p - "Lore fragments and the symbols they became." */
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    color: #00E0FF; /* Neon Cyan */
+    text-shadow: 0 0 3px #00E0FF;
+    margin-bottom: 0;
+}
+
+.lore-grid-container {
+    padding-bottom: 3em; /* Space at the bottom */
+}
+
+.lore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2.5em; /* Generous gap for cards */
+}
+
+.lore-card {
+    background-color: rgba(20, 20, 30, 0.8); /* Dark, translucent card background */
+    border: 1px solid #00E0FF; /* Neon cyan border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 2em 1.5em;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.3), inset 0 0 5px rgba(0, 224, 255, 0.2); /* Outer and inner glow */
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lore-card:hover {
+    transform: translateY(-10px) scale(1.03); /* Lift and slightly enlarge */
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.6), inset 0 0 10px rgba(0, 224, 255, 0.4); /* Enhanced glow on hover */
+}
+
+.lore-emoji {
+    font-size: 4rem; /* Large emoji */
+    line-height: 1;
+    margin-bottom: 0.5em;
+    color: #FF4DF2; /* Neon Pink/Purple for emoji, or keep cyan if preferred */
+    text-shadow: 0 0 8px #FF4DF2, 0 0 15px #FF4DF2; /* Strong glow for emoji */
+    animation: emoji-pulse 2.5s infinite ease-in-out; /* Pulse animation */
+}
+
+@keyframes emoji-pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 8px #FF4DF2, 0 0 15px #FF4DF2;
+    }
+    50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 12px #FF0080, 0 0 25px #FF0080; /* Pulse to hot pink */
+    }
+}
+
+.lore-card-title { /* h3 inside the card */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #FAFAFA; /* Bright white for card titles */
+    margin-bottom: 0.75em;
+}
+
+.lore-text { /* p inside the card */
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #C0C0C0; /* Light gray for lore text */
+    line-height: 1.6;
+}
+
+/* Active Nav Link for Lore Archive */
+.main-navigation ul li a[href="lore-archive.html"] {
+    color: #FF0080; /* Hot Pink to indicate current page */
+    text-shadow: 0 0 3px #FF0080;
+}
+
+.main-navigation ul li a[href="lore-archive.html"]::after {
+    width: 100%; /* Show underline for current page */
+    background-color: #FF0080;
+}
