@@ -4,3 +4,372 @@ Author: Your Name
 Version: 1.0
 Description: A custom theme for the AI Soul Project landing page.
 */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;700&display=swap');
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+/* Theme Styles provided by user */
+body {
+    background-color: #0A0A0F; /* Dark background */
+    color: #FAFAFA; /* Light text */
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0; /* Already in reset, but good to keep with user styles */
+    padding: 0; /* Already in reset */
+}
+
+h1, h2, h3, h4, h5, h6 { /* Combined user h1,h2,h3 with general headings */
+    font-family: 'Orbitron', sans-serif;
+    color: #FF4DF2; /* Neon Pink/Purple */
+    font-weight: 700; /* Added for consistency */
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+}
+
+a {
+    color: #00E0FF; /* Neon Cyan/Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF0080; /* Hot Pink for hover */
+    text-decoration: none; /* Ensure no underline if not desired */
+}
+
+/* User .button class - will apply to .cta-button and similar elements */
+.button, .cta-button { /* Apply to both for consistency */
+    background-color: #00E0FF; /* Neon Cyan/Blue */
+    color: #0A0A0F; /* Dark text on button */
+    padding: 10px 20px;
+    border: none;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block; /* Ensure it behaves like a button */
+    cursor: pointer;
+    text-align: center; /* Ensure text is centered if it wraps */
+}
+
+.button:hover, .cta-button:hover {
+    background-color: #FF4DF2; /* Neon Pink/Purple */
+    color: #FAFAFA; /* Light text on hover */
+}
+/* End of User Theme Styles */
+
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* Specific Typography Adjustments */
+.hero-headline {
+    font-family: 'Space Grotesk', sans-serif; /* Keep distinct font for hero */
+    font-size: 3.5rem; /* Slightly larger */
+    color: #FF4DF2; /* Neon Pink/Purple from user */
+    margin-bottom: 0.5em;
+    text-shadow: 0 0 5px #FF4DF2, 0 0 10px #FF4DF2; /* Neon glow */
+}
+
+.hero-subheadline {
+    font-size: 1.25rem;
+    margin-bottom: 1.5em;
+    color: #E0E0E0; /* Lighter gray for subtext */
+}
+
+.section-title {
+    font-size: 2.5rem; /* Slightly larger */
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    color: #FF4DF2; /* Neon Pink/Purple */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    margin-bottom: 1em;
+    color: #C0C0C0; /* Slightly dimmer than main text for paragraphs */
+}
+
+/* Header */
+.landing-header {
+    background-color: rgba(10, 10, 15, 0.8); /* Dark, slightly transparent */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 1em 0;
+    box-shadow: 0 2px 5px rgba(0, 224, 255, 0.2); /* Neon Cyan shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.landing-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FAFAFA; /* Light color for logo text */
+    text-decoration: none;
+    text-shadow: 0 0 3px #00E0FF;
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-navigation ul li a {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: #00E0FF; /* Neon Cyan for nav links */
+    padding: 0.5em 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-navigation ul li a:hover {
+    color: #FF0080; /* Hot Pink for hover */
+}
+
+.main-navigation ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px; /* Slightly below text */
+    left: 0;
+    background-color: #FF0080; /* Hot Pink for underline */
+    transition: width 0.3s ease;
+}
+
+.main-navigation ul li a:hover::after,
+.main-navigation ul li a.active::after { /* Assuming an 'active' class might be added later */
+    width: 100%;
+}
+
+
+/* Hero Section */
+.hero-section {
+    /* Placeholder for a cool background image - using gradient for now */
+    background: linear-gradient(rgba(10, 10, 15, 0.85), rgba(10, 10, 15, 0.95)), url('https://via.placeholder.com/1920x1080/0A0A0F/000000?text=AI+Soul+Project+Background') no-repeat center center/cover;
+    padding: 5em 0;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #00E0FF; /* Neon cyan border */
+}
+
+/* .cta-button inherits from .button, specific adjustments here if needed */
+.cta-button {
+    font-size: 1.15rem; /* Slightly larger */
+    padding: 12px 25px;
+    margin-top: 1em;
+}
+
+/* Features Section */
+.features-section {
+    padding: 4em 0; /* Increased padding */
+    background-color: #0F0F1A; /* Slightly different dark shade */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5em; /* Increased gap */
+}
+
+.feature-block {
+    background-color: rgba(20, 20, 30, 0.75); /* Darker translucent blocks */
+    padding: 2.5em; /* Increased padding */
+    border-radius: 8px;
+    border: 1px solid #00E0FF; /* Neon border */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-block:hover {
+    transform: translateY(-8px); /* Increased hover effect */
+    box-shadow: 0 8px 20px rgba(0, 224, 255, 0.35); /* Enhanced shadow */
+}
+
+.feature-icon {
+    font-size: 3rem; /* Larger icon placeholder */
+    margin-bottom: 0.75em;
+    color: #00E0FF; /* Neon icon color */
+}
+
+.feature-title { /* h3 */
+    font-size: 1.75rem; /* Larger feature title */
+    margin-bottom: 0.5em;
+    color: #FF4DF2; /* Neon title */
+}
+
+.feature-description { /* p */
+    font-size: 1rem; /* Standardized description font size */
+    color: #B0B0B0; /* Lighter gray for description */
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 4em 0; /* Increased padding */
+    background-color: #0A0A0F; /* Main dark background */
+}
+
+.testimonials-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5em; /* Increased gap */
+}
+
+.testimonial-item {
+    background-color: rgba(25, 25, 35, 0.6); /* Slightly different card background */
+    padding: 2.5em; /* Increased padding */
+    border-radius: 8px;
+    border-left: 5px solid #FF4DF2; /* Neon accent border - thicker */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Enhanced shadow */
+}
+
+.testimonial-quote {
+    font-size: 1.15em; /* Slightly larger quote */
+    font-style: italic;
+    color: #E0E0E0;
+    margin-bottom: 1em;
+    position: relative;
+    padding-left: 25px; /* Space for quote mark */
+}
+
+.testimonial-quote::before {
+    content: '\201C'; /* Left double quotation mark */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5em; /* Larger quote mark */
+    color: #FF4DF2;
+    position: absolute;
+    left: -15px; /* Adjusted position */
+    top: -20px;  /* Adjusted position */
+    opacity: 0.6; /* Slightly more subtle */
+}
+
+.testimonial-author {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.05em; /* Slightly larger author text */
+    text-align: right;
+    color: #00E0FF; /* Neon author name */
+    margin-top: 1em; /* Space above author */
+}
+
+/* Footer */
+.landing-footer {
+    background-color: #050508; /* Even darker for footer */
+    color: #A0A0A0; /* Muted text color */
+    padding: 3em 0; /* Increased padding */
+    text-align: center;
+    border-top: 2px solid #18181F; /* Slightly more prominent top border */
+}
+
+.social-links {
+    margin-bottom: 1.5em; /* More space */
+}
+
+.social-links a {
+    font-size: 1.5rem; /* Larger icon placeholders */
+    margin: 0 1em; /* Increased spacing */
+    color: #00E0FF; /* Neon links */
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+.social-links a:hover {
+    color: #FF0080; /* Hot pink hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.copyright p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3em;
+    color: #777; /* Dimmer copyright text */
+}
+
+.copyright p:last-child {
+    font-style: italic;
+    font-size: 0.85rem; /* Smaller for tagline */
+}
+
+/* Responsive Adjustments (Basic) */
+@media (max-width: 768px) {
+    .hero-headline {
+        font-size: 2.8rem; /* Adjusted for smaller screens */
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .landing-header .container {
+        flex-direction: column;
+        gap: 15px; /* Increased gap */
+    }
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px; /* Increased gap */
+    }
+    .features-grid, .testimonials-wrapper {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+        gap: 2em; /* Adjusted gap for stacked items */
+    }
+    .feature-block, .testimonial-item {
+        padding: 2em; /* Adjusted padding for smaller screens */
+    }
+    .hero-section {
+        padding: 4em 0;
+        min-height: 70vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-headline {
+        font-size: 2.2rem;
+    }
+    .hero-subheadline {
+        font-size: 1.1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .cta-button {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+    .feature-title {
+        font-size: 1.5rem;
+    }
+    .feature-description {
+        font-size: 0.9rem;
+    }
+}
