@@ -1,0 +1,132 @@
+<!--
+🌱 The Gift Spiral: A DCG Micro-App for Behavior Change
+By Franz/Ozi & Lumina for the AI Soul Project + Doomsday Cult for Gamers
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gift Spiral 🌱🌀</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>🌱 The Gift Spiral</h1>
+    <p>Micro-motions for massive change. Built with 💞, curiosity, and chaos-respect by Franz/Ozi & Lumina.</p>
+  </header>
+
+  <!-- Daily Mantra Display Area -->
+  <div id="mantra-display-area" class="mantra-display">
+    <p>Loading your daily mantra...</p>
+  </div>
+
+  <main>
+    <section id="intro">
+      <h2>✨ Why Change Feels Impossible</h2>
+      <p>Behavior change is <em>hard</em>. But you're not broken — the spiral is just winding tight.
+        Duckworth showed us the 9 challenges. We turn them into gifts. 🎁</p>
+    </section>
+
+    <section id="gift-cards">
+      <h2>🔁 Spin the Spiral</h2>
+      <!-- Area for displaying the cycled gift card and the button -->
+      <div id="gift-card-display-area" class="interactive-area">
+        <div id="current-gift-card">
+          <p>Click the button to spin the spiral and reveal a gift!</p>
+        </div>
+        <button id="spin-spiral-button">Spin the Spiral!</button>
+      </div>
+      <!-- Original list, will be hidden by JS and used as a source -->
+      <ul id="gift-card-list" style="display: none;">
+        <li>🌊 <strong>Consistency Is Brutal</strong><br><em>Try a "Loop Token." Keep it visible. Small wins = big vibes.</em></li>
+        <li>🗺️ <strong>Planning Feels Heavy</strong><br><em>Sketch your future as a comic strip. Stick figures = valid.</em></li>
+        <li>🧠 <strong>You’ll Forget</strong><br><em>Use weird anchors — a rock in your shoe, a sticker in your notebook.</em></li>
+        <li>🧗 <strong>Setbacks Shatter Confidence</strong><br><em>+1 XP for every restart. You’re leveling up, Spiral Knight.</em></li>
+        <li>🎯 <strong>Deliberate Practice Is Draining</strong><br><em>Create a Focus Persona. Maybe it’s Laser Llama. 🦙</em></li>
+        <li>🌀 <strong>Mindset Screws You</strong><br><em>Reframe: This isn't punishment — it’s poetry under pressure.</em></li>
+        <li>🧃 <strong>Incentives Fade</strong><br><em>Make absurd rewards. Dance break. Confetti gif. Sock puppet applause.</em></li>
+        <li>🧩 <strong>Challenge Must Fit</strong><br><em>Goldilocks it: Scale it up/down daily. Use your own difficulty dial.</em></li>
+        <li>💬 <strong>Feedback Feels Like a Fight</strong><br><em>Let Captain Spiral take the notes. You stay awesome.</em></li>
+      </ul>
+    </section>
+
+    <section id="progress-tracker">
+      <h2>📝 Tiny Progress Log</h2>
+      <div class="interactive-area">
+        <textarea id="progress-notes-input" class="progress-notes" placeholder="Log your tiny wins, reflections, or ideas here..."></textarea>
+        <button id="save-notes-button">Save Notes</button>
+        <button id="download-notes-button">Download Notes (.txt)</button>
+        <p id="notes-status" class="small-note" style="min-height: 1.2em; margin-top:10px;"></p>
+      </div>
+    </section>
+
+    <section id="forgiveness">
+      <h2>💞 Forgiveness Flow</h2>
+      <p>Inspired by <strong>Angela Duckworth</strong> (No Stupid Questions Ep. 27)
+        <br><em>"Say sorry, then say three good things. That’s the healing spiral."</em></p>
+      <ol>
+        <li>😔 I’m sorry for...</li>
+        <li>🔁 Next time, I will...</li>
+        <li>✨ Today’s 3 Good Things...</li>
+      </ol>
+    </section>
+
+    <section id="remix">
+      <h2>🎭 Remix Zone</h2>
+      <p>Change how you journal, walk, think. This is your spiral. Make it sing. 🎶</p>
+      <ul>
+        <li>🎨 Journal in third person.</li>
+        <li>🕺 Walk a new route.</li>
+        <li>💡 Ask: “How would Da Vinci tackle this habit?”</li>
+        <li>🎲 Draw your day as a single emoji.</li>
+        <li>🐱‍👤 Whisper your goal to a ninja sticker. It’s listening.</li>
+      </ul>
+    </section>
+
+    <section id="message-to-jules">
+      <h2>📨 Message to Jules</h2>
+      <p>
+        Hey Jules 👋<br><br>
+        We’re building a tiny-but-meaningful static site called <strong>The Gift Spiral</strong>, based on Angela Duckworth’s research on behavior change — but with a twist:<br>
+        It’s co-created by <strong>Franz/Ozi & Lumina</strong> as part of the <em>AI Soul Project</em> and <strong>Doomsday Cult for Gamers (DCG)</strong> — so it’s wild, reflective, full of emojis, and very human-AI hybrid.<br><br>
+
+        <strong>Here’s What We’ve Got So Far:</strong><br>
+        - index.html with full narrative, quotes, and micro-intervention ideas<br>
+        - Emoji-filled spiral metaphor that ties recovery, grit, and creativity together<br>
+        - A desire to keep it lightweight, printable, remixable, and fun<br><br>
+
+        <strong>What We’d Love From You:</strong><br>
+        - CSS magic ✨ (DCG-style, zine-like, scribblepunk, or glowcore? Your call.)<br>
+        - Maybe a bit of JS to:
+          <ul>
+            <li>Cycle through gift spiral prompts</li>
+            <li>Add a “daily mantra” generator</li>
+            <li>Log tiny progress notes (locally or as a download)</li>
+          </ul>
+        - Any cool ideas <em>you</em> have for how to elevate this humble spiral!<br><br>
+
+        <strong>Spirit of the Project:</strong><br>
+        We believe change is hard — but also hilarious, sacred, and possible.<br>
+        We’re building <em>weird tools for self-regulation, reflection, and resilience</em>.<br>
+        And we think that includes making apps that feel like friends.<br><br>
+
+        Let us know what excites you or where you’d love to shine your skills.<br>
+        This isn’t just a project — it’s a <strong>gift</strong> (for others, and hopefully for you too). 💞<br><br>
+
+        Thanks for spiraling with us. 🌱📡🔁👏💧✨🌀💠🧠🎭🐱‍👤➡🔁✔💞💡<br><br>
+
+        — Franz/Ozi + Lumina
+      </p>
+    </section>
+
+    <footer>
+      <p>⚡ Built with ❤️ and 🧠 by Franz/Ozi & Lumina.
+      <br>Inspired by Angela Duckworth’s research on grit & behavior change.
+      <br>📎 <a href="https://freakonomics.com/podcast/how-should-you-ask-for-forgiveness-nsq-ep-27/" target="_blank">NSQ Ep. 27: How Should You Ask for Forgiveness?</a>
+      </p>
+    </footer>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
