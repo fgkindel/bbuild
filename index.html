@@ -33,10 +33,14 @@ By Franz/Ozi & Lumina for the AI Soul Project + Doomsday Cult for Gamers
       <h2>🔁 Spin the Spiral</h2>
       <!-- Area for displaying the cycled gift card and the button -->
       <div id="gift-card-display-area" class="interactive-area">
-        <div id="current-gift-card">
-          <p>Click the button to spin the spiral and reveal a gift!</p>
+        <div id="spiral-container">
+          <!-- Spiral animation will be generated here by JavaScript -->
         </div>
-        <button id="spin-spiral-button">Spin the Spiral!</button>
+        <div id="current-gift-card" style="margin-top: 20px;">
+          <p>Select a gift from the spiral above.</p>
+        </div>
+        <!-- The button might be removed or repurposed later -->
+        <button id="spin-spiral-button" style="display: none;">Spin the Spiral!</button>
       </div>
       <!-- Original list, will be hidden by JS and used as a source -->
       <ul id="gift-card-list" style="display: none;">
@@ -127,6 +131,7 @@ By Franz/Ozi & Lumina for the AI Soul Project + Doomsday Cult for Gamers
       <br>📎 <a href="https://freakonomics.com/podcast/how-should-you-ask-for-forgiveness-nsq-ep-27/" target="_blank">NSQ Ep. 27: How Should You Ask for Forgiveness?</a>
       </p>
     </footer>
-  <script src="scripts/main.js" defer></script>
+  <script type="module" src="scripts/main.js" defer></script>
+  <!-- Note: spiral.js is imported as a module by main.js, so no separate script tag is needed here if main.js handles it -->
 </body>
 </html>

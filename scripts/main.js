@@ -1,45 +1,50 @@
+import { createSpiral } from './spiral.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const giftCardList = document.getElementById('gift-card-list');
     const currentGiftCardDisplay = document.getElementById('current-gift-card');
-    const spinSpiralButton = document.getElementById('spin-spiral-button');
+    // const spinSpiralButton = document.getElementById('spin-spiral-button'); // Keep for now, might be repurposed or removed
+    const spiralContainer = document.getElementById('spiral-container');
 
     let giftCards = [];
 
-    if (giftCardList && currentGiftCardDisplay && spinSpiralButton) {
+    if (giftCardList && currentGiftCardDisplay && spiralContainer) {
         // Extract gift card content from the hidden list
-        // Convert NodeList to Array to use array methods if needed, though direct iteration is fine
         const listItems = giftCardList.getElementsByTagName('li');
         for (let i = 0; i < listItems.length; i++) {
             giftCards.push(listItems[i].innerHTML); // Store the HTML content of each li
         }
 
-        const displayRandomGiftCard = () => {
-            if (giftCards.length > 0) {
-                const randomIndex = Math.floor(Math.random() * giftCards.length);
-                currentGiftCardDisplay.innerHTML = giftCards[randomIndex];
-            } else {
-                currentGiftCardDisplay.innerHTML = "<p>No gift cards available to display.</p>";
+        const handleGiftSelection = (giftHTML, selectedElement, giftIndex) => {
+            currentGiftCardDisplay.innerHTML = giftHTML;
+
+            // Remove 'selected' class from previously selected item
+            const previouslySelected = spiralContainer.querySelector('.spiral-gift-item.selected');
+            if (previouslySelected) {
+                previouslySelected.classList.remove('selected');
             }
+            // Add 'selected' class to the clicked item
+            selectedElement.classList.add('selected');
+
+            console.log(`Selected gift index: ${giftIndex}`);
         };
 
-        // Event listener for the button
-        spinSpiralButton.addEventListener('click', displayRandomGiftCard);
-
-        // Display an initial random gift card on page load
         if (giftCards.length > 0) {
-            displayRandomGiftCard();
+            createSpiral(spiralContainer, giftCards, handleGiftSelection);
+            // Update initial message in currentGiftCardDisplay, or select a default gift
+            currentGiftCardDisplay.innerHTML = "<p>Select a gift from the spiral above. ✨</p>";
         } else {
-            // Fallback if the gift card list was somehow empty or not found
-            // This message is slightly different from the one inside displayRandomGiftCard
-            // to help differentiate if an issue occurs before the first spin.
-            currentGiftCardDisplay.innerHTML = "<p>Welcome! Spin the spiral to get started.</p>";
+            currentGiftCardDisplay.innerHTML = "<p>No gift cards available to display in the spiral.</p>";
+            if(spiralContainer) spiralContainer.innerHTML = "<p>Could not load gifts.</p>"
         }
 
+        // The original spinSpiralButton logic is now replaced by direct interaction with the spiral.
+        // spinSpiralButton.addEventListener('click', () => { /* old logic or new repurpose */ });
+
     } else {
-        console.error('Gift card cycler elements not found. Check IDs in HTML and JS.');
-        // Optionally, display an error message to the user in a fallback way
+        console.error('Required elements for gift spiral not found. Check IDs: gift-card-list, current-gift-card, spiral-container.');
         if (currentGiftCardDisplay) {
-            currentGiftCardDisplay.innerHTML = "<p>Oops! Something went wrong with loading the gifts. Please try refreshing.</p>";
+            currentGiftCardDisplay.innerHTML = "<p>Oops! Something went wrong with loading the gift spiral. Please try refreshing.</p>";
         }
     }
 
